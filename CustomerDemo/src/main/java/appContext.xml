@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="address" class="EmpAdd.Address">
+<constructor-arg name="addressLine1" value="Gurgaon"/>
+<constructor-arg name="addressLine2" value="Haryana"/>
+<constructor-arg name="phoneNo" value="8090809080"/>
+<constructor-arg name="zipCode" value="123321"/> 
+
+</bean>
+
+<bean id="employee" class="EmpAdd.Employee">
+<property name="empId" value="1212"/>
+<property name="empName" value="Saurav"/>
+<property name="address" ref="address"/>
+</bean>
+
+
+</beans>
