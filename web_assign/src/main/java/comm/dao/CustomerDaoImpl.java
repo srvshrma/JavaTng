@@ -57,7 +57,9 @@ Query query=manager.createQuery("from Customer",Customer.class);
 
 	@Override
 	public void delete(Customer customer) {
-		// TODO Auto-generated method stub
+		manager.getTransaction().begin();
+		manager.remove(customer);
+		manager.getTransaction().commit();
 		
 	}
 

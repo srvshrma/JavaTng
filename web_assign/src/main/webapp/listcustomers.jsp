@@ -29,13 +29,16 @@
   <tbody>
   <c:forEach var="tempCustomer" items="${customers }">
   <c:url var="updateUrl" value="updatecontroller.do">
+   <c:param name="customerId" value="${tempCustomer.id}"/></c:url>
+  <c:url var="deleteUrl" value="customerdeletecontroller.do">
   <c:param name="customerId" value="${tempCustomer.id}"/>
-					</c:url>		
+							</c:url>
     <tr>
       <td>${tempCustomer.id}</td>
       <td>${tempCustomer.name}</td>
       <td>${tempCustomer.email}</td>
      <td><a href="${ updateUrl}">Update</a></td>
+     <td><a href="${ deleteUrl}">Delete</a></td>
     </tr>
   </c:forEach>
   </tbody>
