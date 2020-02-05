@@ -9,5 +9,5 @@ public interface BookService {
 	
 	public List<Book> getAllBooks();
 	public Optional<Book> getBookById(Integer bookId);
-
+	public Book createBook(Book book);
 }

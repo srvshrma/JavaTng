@@ -35,4 +35,11 @@ public BookDao dao;
 		return dao.findById(bookId);
 	}
 
+	@Override
+	
+	public Book createBook(Book book) {
+		// TODO Auto-generated method stub
+		return dao.save(book);
+	}
+
 }
