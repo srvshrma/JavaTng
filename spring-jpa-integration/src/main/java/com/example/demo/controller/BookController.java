@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -71,7 +73,39 @@ public class BookController {
 	public Book createBook(@RequestBody Book book) {
 		book.setBookId(0);
 		return service.createBook(book);
-		
-		
 	}
+	@PutMapping("/books")
+	public Book updateBook(@RequestBody Book book) {
+		//book.setBookId(0);
+		return service.createBook(book);
+	}
+	@DeleteMapping("/books/{bookId}")
+	public void deleteById(@PathVariable Integer bookId)
+	{
+		service.deleteById(bookId);
+	
+
+	}
+	
+	@DeleteMapping("/books")
+	public void deleteAll()
+	{
+		service.deleteAll();
+	}
+	
+	@GetMapping("/books/findByName/{name}")
+	public List<Book> findByName(@PathVariable String name) {
+		return service.findByName(name);
+
+	}
+	@GetMapping("/books/findByAuthor/{author}")
+	public List<Book> findByAuthor(@PathVariable String author) {
+		return service.findByAuthor(author);
+
+	}@GetMapping("/books/findByNameAndAuthor/{name}/{author}")
+	public List<Book> findByNameAndAuthor(@PathVariable String name,@PathVariable String author) {
+		return service.findByNameAndAuthor(name,author);
+
+	}
+	
 }

@@ -42,4 +42,34 @@ public BookDao dao;
 		return dao.save(book);
 	}
 
+	@Override
+	public void deleteById(Integer bookId) {
+		// TODO Auto-generated method stub
+		 dao.deleteById(bookId);;
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		 dao.deleteAll();;
+	}
+
+	@Override
+	public List<Book> findByName(String name) {
+		// TODO Auto-generated method stub
+		return dao.findByName(name) ;
+	}
+
+	@Override
+	public List<Book> findByAuthor(String author) {
+		// TODO Auto-generated method stub
+		return dao.findByAuthor(author);
+	}
+
+	@Override
+	public List<Book> findByNameAndAuthor(String name, String Author) {
+		// TODO Auto-generated method stub
+		return dao.findByNameAndAuthor(name, Author);
+	}
+
 }
