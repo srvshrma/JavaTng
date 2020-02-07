@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OrderPage</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-danger"><u>Order your Gift</u></h1>
+  <br>
+  <br>
+
+   <form>
+  <div class="form-row">
+  <div class="col">
+      <label>Recipient Name:</label>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+     <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="col">
+  <label>Gift Card Amount:</label>
+  </div>
+      <div class="col">
+      <label for="GIFT"></label>
+      <input type="number" min="0" max="100" class="form-control" id="inputEmail4" placeholder="INR" required>
+       <div class="valid-feedback">
+        Looks good!
+        </div>
+      </div>
+    <div class="col">
+      <label for="inputPassword4"></label>
+      <input type="number" min="0" max="100" class="form-control" id="inputPassword4" placeholder="Paise" required>
+    
+    </div>
+     <div class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
+  
+	<fieldset>
+	<legend>Shipping Address</legend>
+    <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="ex:1234 Main Street" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" required>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <select name="country" class="countries" id="countryId">
+						<option value="">choose</option>
+						</select>
+						<br>
+						<label>Countries</label>
+						</div>
+	<div class="form-group col-md-6">
+	
+       <select name="state" class="states" id="stateId">
+						<option value="">choose</option>
+					</select>
+					<br>
+					<label>States</label>
+                  </div>
+                  </div>
+  <div class="form-row">
+    <div class="col">
+      <select name="city" class="cities" id="cityId">
+						<option value="">choose</option>
+						</select>
+						<br>
+						<label>Cities</label>
+    </div>
+    
+    
+    
+    <script
+						src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+					<script src="//geodata.solutions/includes/countrystatecity.js"></script>
+					
+   
+    <div class="col">
+      <label for="inputZip">
+      <input type="text" class="form-control" id="inputZip">Zip</label>
+    
+    </div>
+    </div>
+</fieldset>
+<br>
+
+  <div class="form-row">
+  <div class="col">
+      <label>Buyers Name:</label>
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+     <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+  <br>
+  
+  <label for="phoneNumber">Phone Number:</label> 
+  
+            <input value="+91" id="phoneNumber" name="phoneNumber" style="width:45px;"  placeholder=""  > 
+            <input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;" placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;" placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;" placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+			<input type="number" id="phoneNumber" name="phoneNumber" style="width:15px;"  placeholder="" maxlength="1">
+
+			<br> 
+			<br>
+			<label for="email">Email:</label> 
+			<input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required /> <br> <br>
+				
+				 <button type="submit" class="btn btn-primary">Place Order</button>
+		</div>
+ </form>
+ </body>
+ </html>
