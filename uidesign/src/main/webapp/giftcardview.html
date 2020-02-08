@@ -2,11 +2,79 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="giftcardview.css">
-</head>
 <title>Insert title here</title>
+<style>
+.sidenav {
+	height: 100%;
+	width: 150px; /* Set the width of the sidebar */
+	position: absolute; /* Fixed Sidebar (stay in place on scroll) */
+	z-index: 1; /* Stay on top */
+	top: 50; /* Stay at the top */
+	left: 0;
+	background-color: #FEF5F5; /* Black */
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 50px;
+}
+
+.sidenav a {
+	padding: 20px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #A44711;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.main {
+	margin-left: 160px; /* Same as the width of the sidebar */
+	padding: 0px 10px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 </head>
 <body>
+<img src="C:\Users\ad\Desktop\logo.png" alt="Gift Card" class="rounded-lg" height="150">
+	
+	<nav class="navbar navbar-expand-lg navbar-light"
+		style="background-color: #FEF5F5;>
+  <a class="navbar-brand" href="LandkingPage.html">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="LandingPage.html">Landing
+						Page<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item "><a class="nav-link" href="orderpage.html"> Place
+						Gift card order</a></li>
+				<li class="nav-item"><a class="nav-link" href="giftcardview.html">View Gift
+						Card orders</a></li>
+				<li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact
+						Us</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="sidenav" >
+		<a href="LandingPage.html">Landing Page</a> <a href="orderpage.html"> Place Gift card order</a> <a
+			href="giftcardview.html">View Gift Card orders</a> <a href="ContactUs.html">Contact Us</a>
+	</div>
+	<br>
+<div class="main">
 <table id="orderTable">
   <thead>
     <tr>
@@ -19,7 +87,7 @@
      
     </tr>
   </thead>
- 
+ </div>
 </table>
 </body>
 </html>
