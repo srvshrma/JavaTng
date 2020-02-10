@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        if(typeof(localStorage)!=null){
+            console.log("Getting")
+            //2 ways to store data
+            //way no. 1
+            localStorage.setItem("name","Saurav");
+            //way no.2
+            localStorage.lastname = "Sharma";
+        }else{
+            console.log("Not Supported")
+        }
+    </script>
+
+</body>
+</html>
