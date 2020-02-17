@@ -1,0 +1,36 @@
+<h1>Names:</h1>
+<ul *ngFor="let name of names">
+  <li>{{ name }}</li>
+</ul>
+<button class="btn btn-primary" (click)="onClicked()">Refresh</button>
+<div class="container">
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>#-odd-even-first-last</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let emp of employees;
+          trackBy: trackByEmpId;
+          index as i;
+          odd as o;
+          even as e;
+          first as f;
+          last as l
+        "
+        [style.background]="o ? 'pink' : 'grey'"
+      >
+        <td>{{ i }}-{{ o }}-{{ e }}-{{ f }}-{{ l }}</td>
+        <td>{{ emp.empId }}</td>
+        <td>{{ emp.empName }}</td>
+        <td>{{ emp.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
