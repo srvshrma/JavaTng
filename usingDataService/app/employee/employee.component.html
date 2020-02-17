@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.empId}}</td>
+            <td>{{employee.name | uppercase | link : employee.gender}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.salary | currency : 'INR'}}</td>
+            <td>{{employee.dateOfBirth | date : 'longDate'}}</td>
+        </tr>
+    </tbody>
+</table>
