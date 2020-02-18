@@ -1,0 +1,21 @@
+<p>emp works!</p>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>title</th>
+            <th>body</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let em of emp">
+            <td>{{em.userId}}</td>
+            <td>{{em.id }}</td>
+            <td>{{em.title}}</td>
+            <td>{{em.body}}</td>
+            
+        </tr>
+    </tbody>
+</table>
