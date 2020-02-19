@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "src/app/services/data.service";
+import { Router } from "@angular/router";
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  public categories=[];
-  public image_url="http://rjtmobile.com/grocery/images/";
-  constructor(private dataService:DataService) { }
+  public categories = [];
+  public image_url = "http://rjtmobile.com/grocery/images/";
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
-    this.dataService.getCategory().subscribe(
-      x => this.categories = x.data
-    )
+    this.dataService.getCategory().subscribe(x => (this.categories = x.data));
   }
-
+  onSelectCategory(category) {
+    console.log(category.catId);
+    this.router.navigate(["/product", category.catId]);
+  }
 }

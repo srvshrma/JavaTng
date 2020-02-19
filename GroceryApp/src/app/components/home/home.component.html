@@ -1,19 +1,17 @@
-
+<div class="container">
+  <app-header></app-header>
+</div>
 <div class="row">
-  <div
-    class="card "
-    style="width: 21rem;"
-    *ngFor="let category of categories"
-  >
-    <img
-      src="{{ image_url + category.catImage }}"
-      alt=""
-      class="card-img-top"
-    />
-    <div class="card-body">
-      <h5 class="card-text text-center">{{ category.catName }}</h5>
-
-      <a href="#" class="btn btn-primary">Buy</a>
+  <div class="card " style="width: 21rem;" *ngFor="let category of categories">
+    <div (click)="onSelectCategory(category)">
+      <img
+        src="{{ image_url + category.catImage }}"
+        alt=""
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-text text-center">{{ category.catName }}</h5>
+      </div>
     </div>
   </div>
 </div>
