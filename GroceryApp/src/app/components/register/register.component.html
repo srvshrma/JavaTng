@@ -1,1 +1,69 @@
-<p>register works!</p>
+<div class="container">
+    <div align="center">
+        <img src="../../../assets/img/grocery2.png" alt="Grocery logo" width="150px" />
+    </div>
+
+    <h1 align="center" class="p-3 mb-2 bg-info text-white rounded-pill shadow-lg p-3 mb-5 bg-info rounded">Registration</h1>
+    
+    <form #userForm="ngForm" (ngSubmit)="onsubmit()">
+        <!-- {{userForm.value | json}}
+      <br><br>
+      {{user | json}} -->
+      <h1>{{userForm.valid}}</h1>
+        <div class="form-group">
+            <label for=""><b> User Name</b></label>
+            <input #username="ngModel" [(ngModel)]="user.username" id="username" name="username" type="text" class="form-control"
+              [class.is-invalid]="username.invalid && username.touched"  required />
+              <small class="text-danger" [class.d-none]="username.valid || username.untouched">
+                  *This is required field
+              </small>
+        </div>
+        <!-- {{ username.dirty }} -->
+        <div class="form-group">
+            <label for=""><b> Email</b></label>
+            <input [(ngModel)]="user.email" name="email" type="email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for=""><b> Phone No</b></label>
+            <input #phone="ngModel" [(ngModel)]="user.phone" name="phone" type="tel" class="form-control" 
+           [class.is-invalid]="phone.invalid && phone.touched" required pattern="^\d{10}$"/>
+            <!--  <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">
+            *This is required field and phone no should be valid
+            </small> -->
+            <div *ngIf="phone.errors && (phone.invalid && phone.touched )">
+                <small *ngIf="phone.errors.required" class="text-danger">This is required field</small>
+                <small *ngIf="phone.errors.pattern" class="text-danger">Phone is invalid</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for=""><b> Password</b></label>
+            <input [(ngModel)]="user.password" name="password" type="password" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for=""><b> Categories</b></label>
+            <select [(ngModel)]="user.category" name="categories" id="" class="form-control">
+                <option>--Please select--</option>
+                <option *ngFor="let categories of categories">{{ categories }}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <b>Gender</b>
+            <div class="form-check">
+                <input [(ngModel)]="user.gender" type="radio" name="gender" value="male" class="form-check-input" />
+                <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check">
+                <input [(ngModel)]="user.gender" type="radio" name="gender" value="female" class="form-check-input" />
+                <label class="form-check-label">Female</label>
+            </div>
+            <br />
+            <div class="form-group">
+                <input [(ngModel)]="user.subscribe" name="subscribe" type="checkbox" />
+                <label for=""><b> Subscribe </b></label>
+            </div>
+
+            <input type="submit" [disabled]="!userForm.valid" value="Register" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

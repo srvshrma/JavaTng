@@ -1,1 +1,19 @@
-<p>login works!</p>
+<!-- *****************REACTIVE FORM********************* -->
+<div class="container">
+    <div align="center">
+        <img src="../../../assets/img/grocery2.png" alt="Grocery logo" width="150px"></div>
+<h1 align="center" class="p-3 mb-2 bg-success text-white rounded-pill shadow-lg p-3 mb-5 bg-success rounded" >Login</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="form-group">
+      <label for=""><b> Email</b></label>
+      <input type="email" class="form-control" formControlName="email"/>
+    </div>
+    <div class="form-group">
+        <label for=""><b> Password</b></label>
+        <input type="password" class="form-control" formControlName="password"/>
+      </div>
+  
+  <input type="submit" value="Login" class="btn btn-primary" />
+  <a class="nav-link" href="register/">Register: New User</a>
+</form>
+</div>
