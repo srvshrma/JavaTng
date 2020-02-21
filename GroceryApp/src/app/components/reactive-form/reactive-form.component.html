@@ -1,0 +1,48 @@
+<br />
+<div class="container">
+  <h1>Reactive Form Demo</h1>
+  <p># Form using form group and form control</p>
+  <form [formGroup]="userForm">
+    {{ userForm.value | json }}
+
+    <div class="form-group">
+      <label for=""><b> Email</b></label>
+      <input type="email" class="form-control" formControlName="email" [class.is-invalid]="userForm.get('email').invalid && userForm.get('email').touched" required/>
+    </div>
+    <div class="form-group">
+      <label for=""><b> Password</b></label>
+      <input type="password" class="form-control" formControlName="password" [class.is-invalid]="userForm.get('password').invalid && userForm.get('password').touched" required/>
+    </div>
+    <div *ngIf="userForm.get('password').invalid && userForm.get('password').touched">
+        <small class="text-danger" *ngIf="userForm.get('password').errors.required">*This is required field</small>
+        <small class="text-danger" *ngIf="userForm.get('password').errors.minlength">*Min length entered should be greater than 3</small>
+        <small class="text-danger" *ngIf="userForm.get('password').errors.maxlength">*Max length entered should be smaller than 10</small>
+    </div>
+    <div formGroupName="address">
+      <div class="form-group">
+        <label for=""><b> House</b></label>
+        <input type="text" class="form-control" formControlName="house" />
+      </div>
+      <div class="form-group">
+        <label for=""><b> City</b></label>
+        <input type="text" class="form-control" formControlName="city" />
+      </div>
+      <div class="form-group">
+        <label for=""><b> Country</b></label>
+        <input type="text" class="form-control" formControlName="country" />
+      </div>
+    </div>
+    <input
+      type="button"
+      (click)="loadData()"
+      class="btn btn-primary"
+      value="Load-Data"
+    />
+    <input
+      type="submit"
+      [disabled]="!userForm.valid"
+      value="Login"
+      class="btn btn-primary"
+    />
+  </form>
+</div>

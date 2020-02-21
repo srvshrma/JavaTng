@@ -5,14 +5,15 @@ import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { ProductComponent } from "./components/product/product.component";
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "cart", component: CartComponent },
-  { path: "product/:id", component: ProductComponent }
-  
+  { path: "product/:id", component: ProductComponent },
+  { path :"reactiveForm", component: ReactiveFormComponent}
 ];
 
 @NgModule({
